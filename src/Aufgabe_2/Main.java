@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args)  throws IOException, JAXBException, FileNotFoundException {
+    public static void main(String[] args)  throws IOException, JAXBException {
         ObjectMapperWeather omw = new ObjectMapperWeather();
 
         Aufgabe_1.Weather wetter1 = omw.readJson();
@@ -22,7 +22,7 @@ public class Main {
 
 
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        marshaller.marshal(wetter2, new File("aufgabe_2/weather.xml"));
+        marshaller.marshal(wetter2, new File("Aufgabe_2/weather.xml"));
         marshaller.marshal(wetter2, System.out);
     }
 }
