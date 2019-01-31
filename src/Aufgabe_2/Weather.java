@@ -1,14 +1,31 @@
-package Aufgabe_1;
+package Aufgabe_2;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 
 public class Weather {
+    @XmlAttribute(name = "id")
     private int id;
+    @XmlElement(name = "main")
     private String main;
+    @XmlElement(name = "description")
     private String description;
+
+    //Aufgabe 4 das Element icon wird nicht mehr mit erstellt und dadurch auch nicht sichtbar
+    //@XmlElement(name = "icon")
+    @XmlTransient
     private String icon;
 
-    //brauche hier leeren Konstruktor, wird automatisch erstellt
+    public Weather() {
+    }
 
 
+    public Weather(int id, String main, String description, String icon) {
+        this.id = id;
+        this.main = main;
+        this.description = description;
+        this.icon = icon;
+    }
 
     public int getId() {
         return id;
@@ -46,4 +63,5 @@ public class Weather {
     public String toString() {
         return "ID: " + getId() + ", Main: " + getMain() + ", Description: " + getDescription() + ", Icon: " + getIcon();
     }
+
 }
